@@ -1,0 +1,108 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 3cm;
+    margin-right: 3cm;
+}
+
+img{
+    width: 300px;
+    height: 300px;
+}
+
+#header{
+    display: grid;
+    grid-template-columns: auto;
+    /* border-style: double; */
+}
+
+#logo{
+    padding-left: 2cm;
+}
+#top{
+    display: flex;
+    flex-direction: row;
+    /* background-color: rgb(113, 111, 110); */
+    justify-content: space-between;
+    padding-right: 2cm;
+    padding-top: 7px;
+    /* border-style: dashed; */
+}
+#bottom{
+    display: flex;
+    flex-direction: row;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-right: 2cm;
+    padding-left: 2cm;
+    justify-content: space-between;
+    /* border-style: dashed; */
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+ 
+    /* justify-content: space-around; */
+    /* border-style: groove; */
+}
+
+#parentSignUp{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    height: max-content;
+    /* justify-content: space-between; */
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border-color: rgb(204, 207, 210);
+    padding: 35px;
+    /* border-style: dotted; */
+}
+
+#aboutus{
+    width: 500px;
+    height: max-content;
+    border-radius: 20px;
+    background-color: rgb(236, 245, 245);
+    font-size: small;
+    padding: 8px;
+}
+
+#display{
+    width: fit-content;
+    margin-top: 15px;
+    padding: 35px;
+    /* border-style: dotted; */
+    border-color: brown;
+}
+
+#tutorSignup{
+    display: grid;
+    grid-template-columns: max-content;
+    width: 300px;
+    height: max-content;
+    padding: 25px;
+    margin-top: 15px;
+    /* border-style: dotted; */
+    border-color: brown;
+}
+
+#btnPlaceholder{
+    display: grid;
+    grid-template-rows: max-content;
+    /* border-style: dotted; */
+}
+
+#formPlaceholder{
+    display: grid;
+    display: none;
+    /* grid-template-rows: max-content; */
+    width: max-content;
+    height: max-content;
+    padding: 5px;
+    /* border-style: dotted; */
+    background-color: whitesmoke;
+}
