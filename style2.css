@@ -8,6 +8,7 @@
   border: none;
   position: relative;
   color: #f40c0c;
+  font-weight: 600;
   cursor: pointer;
   z-index: 1;
   padding: 10px 20px;

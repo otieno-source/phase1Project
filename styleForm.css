@@ -15,7 +15,8 @@ h1 {
 label {
     display: block;
     margin: 10px 0 5px;
-    font-weight: bold;
+    font-weight: 400;
+    color: crimson;
 }
 
 input[type="text"],
