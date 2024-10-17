@@ -83,8 +83,9 @@ main{
 }
 #gallery{
     display: none;
+    /* display: flexbox; */
     position: absolute;
-    margin-top: 1.5cm;
+    margin-top: 3cm;
     width: 300px;
     height: max-content;
     border-radius: 30px;
@@ -94,6 +95,11 @@ main{
     padding: 8px;
     font-weight: 500;
     border-style: double;
+}
+
+#gallery.img{
+    width: 100%;
+    height: auto;
 }
 
 #parentSignUp{

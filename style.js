@@ -1,10 +1,10 @@
-//function to open the sign-up form.
+// Function to open the sign-up form.
 function openTutorSignupForm() {
     const formDisplay = document.querySelector('#formPlaceholder');
     formDisplay.style.display = (formDisplay.style.display === 'none' || getComputedStyle(formDisplay).display === 'none') ? "block" : "none";
 }
 
-const tutorSignupBtn = document.querySelector('#tutorRegister');//get the button for tutor signup to open form.
+const tutorSignupBtn = document.querySelector('#tutorRegister'); // Get the button for tutor signup to open form.
 tutorSignupBtn.addEventListener('click', openTutorSignupForm);
 
 // Function to open/collapse the gallery.
@@ -25,7 +25,7 @@ async function fetchTutors() {
         const openGalleryBtn = document.querySelector('#submitSelect');
         openGalleryBtn.addEventListener('click', () => {
             const select = document.querySelector('#searchTutorBtn');
-            const selectedSubject = select.value;// getting user input.value from select
+            const selectedSubject = select.value; // Getting user input.value from select
 
             let found = false; // To track if we find a tutor
 
@@ -44,12 +44,9 @@ async function fetchTutors() {
             }
         });
     } catch (error) {
-        console.error(error); // Fixed error handling
+        console.error(error); 
     }
 }
-
-// Call to fetch tutors
-fetchTutors();
 
 // Function to handle displaying tutor information
 const handleClick = (newTutor) => {
@@ -69,12 +66,12 @@ const handleClick = (newTutor) => {
 };
 
 const addSubmitListener = () => {
-    const inptform = document.querySelector('#tutorSignUpForm');
-    inptform.addEventListener('submit', (event) => {
+    const inputForm = document.querySelector('#tutorSignUpForm');
+    inputForm.addEventListener('submit', async (event) => {
         event.preventDefault();
-        const formData = new FormData(inptform);
+        const formData = new FormData(inputForm);
 
-        // Getting user inputs from the form here
+        // Getting user inputs from the form
         const name = formData.get('name');
         const age = formData.get('age');
         const male = formData.get('gender') === 'Male';
@@ -85,26 +82,50 @@ const addSubmitListener = () => {
         // Creating an object from the form values
         const newTutor = { name, age, male, subject, image, fees };
 
-        // Display the image in the #inforGrid div
-        const display = document.querySelector('#inforGrid'); // getting the html div for gallery
+        try {
+            // Send a POST request to add the new tutor to the database
+            const response = await fetch('http://localhost:3000/tutors', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newTutor)
+            });
 
-        const newTutorImage = document.createElement('img'); // creating img tag here
-        newTutorImage.src = newTutor.image;
-        newTutorImage.alt = newTutor.name;
-        newTutorImage.style.width = '100%';
-        newTutorImage.style.height = 'auto';
-        newTutorImage.style.cursor = 'pointer';
-        newTutorImage.style.margin = '10px 0';
+            if (!response.ok) {
+                throw new Error('Failed to add new tutor');
+            }
 
-        // Adding event listener so that clicking the new tutor image shows its info
-        newTutorImage.addEventListener('click', () => handleClick(newTutor));
+            // add the new tutor to the display as well
+            const display = document.querySelector('#inforGrid'); // Getting the HTML div for the gallery
 
-        display.appendChild(newTutorImage); // adding the new tutor image
+            const newTutorImage = document.createElement('img'); // Creating img tag here
+            newTutorImage.src = newTutor.image;
+            newTutorImage.alt = newTutor.name;
+            newTutorImage.style.width = '100%';
+            newTutorImage.style.height = 'auto';
+            newTutorImage.style.cursor = 'pointer';
+            newTutorImage.style.margin = '10px 0';
 
-        // Clear the form fields
-        alert('Your Details have been submitted');
-        inptform.reset();
+            // Adding an event listener so that when you click the new tutor image, it shows more details about it.
+            newTutorImage.addEventListener('click', () => handleClick(newTutor));
+
+            display.appendChild(newTutorImage); // Adding the new tutor image
+
+            // Clear the form fields
+            alert('Your Details have been successfully submitted!');
+            inputForm.reset();
+        } catch (error) {
+            console.error(error);
+            alert('There was an error submitting your details. Please try again.');
+        }
     });
 };
 
-addSubmitListener();
+function run() {
+    fetchTutors();
+    addSubmitListener();
+}
+
+// Call run function once the DOM is fully loaded.
+document.addEventListener('DOMContentLoaded', run);
