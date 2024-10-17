@@ -21,7 +21,6 @@
         
     <main>
         <section id="parentSignUp">
-            <button id="searchTutor">Search for a Tutor</button><br>
             <button class="topNavbtn">Upcoming Events for Kids</button>
             <h3>For Parents</h3>
             <button id="parentsSignUp">Create Account</button>
@@ -30,13 +29,21 @@
         </section>
 
         <section id="display">
+
+            <button id="searchTutorBtn">Select A Tutor</button>
+            <div id="aboutUs">
+                <p id="aboutus">At PLay & Learn, we understand that the early years of education are crucial for a child's development. That’s why we’ve created a bridge between parents and dedicated educators who are passionate about nurturing young minds. Our mission is to empower families with access to high-quality preschool tutoring that fosters creativity, critical thinking, and a love for learning.
+                    We believe that every child deserves a strong educational foundation, which is why we curate a diverse range of qualified tutors who are equipped with innovative teaching methods and up-to-date curricula. Whether you’re looking for personalized one-on-one sessions or engaging group activities, our platform makes it easy to find the perfect match for your child's unique learning needs.
+                    Affordability is key, and we are committed to ensuring that quality education is accessible to all families. That’s why we offer competitive pricing and flexible options that work within your budget — because we know that every penny counts!
+                    Join us on our mission to revolutionize preschool education. Connect with dedicated tutors, enhance your child’s learning experience, and set them on a path to success. Together, we can shape brighter futures!
+                    Thank you for choosing us. Let’s embark on this exciting journey of discovery and growth together!
+                    </p>
+            </div>
+
+            <div id="gallery">
+                <p id="inforGrid"><h4>Select A Tutor</h4></p>
+            </div>
             
-            <p id="aboutus">At PLay & Learn, we understand that the early years of education are crucial for a child's development. That’s why we’ve created a bridge between parents and dedicated educators who are passionate about nurturing young minds. Our mission is to empower families with access to high-quality preschool tutoring that fosters creativity, critical thinking, and a love for learning.
-            We believe that every child deserves a strong educational foundation, which is why we curate a diverse range of qualified tutors who are equipped with innovative teaching methods and up-to-date curricula. Whether you’re looking for personalized one-on-one sessions or engaging group activities, our platform makes it easy to find the perfect match for your child's unique learning needs.
-            Affordability is key, and we are committed to ensuring that quality education is accessible to all families. That’s why we offer competitive pricing and flexible options that work within your budget — because we know that every penny counts!
-            Join us on our mission to revolutionize preschool education. Connect with dedicated tutors, enhance your child’s learning experience, and set them on a path to success. Together, we can shape brighter futures!
-            Thank you for choosing us. Let’s embark on this exciting journey of discovery and growth together!
-            </p>
 
             <!-- <img src="./images/tutor pic.jpg" alt=""> -->
         </section>
@@ -45,7 +52,7 @@
                 <button id="tutorRegister">Become A Tutor & Earn</button>
             </div>
             <div id="formPlaceholder">
-                <form action="#" method="post">
+                <form action="#" id="tutorSignUpForm" method="post">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
         
@@ -62,10 +69,7 @@
         
                     <label for="subject">Subject:</label>
                     <input type="text" id="subject" name="subject" required>
-        
-                    <label for="experience">Experience (Years):</label>
-                    <input type="number" id="experience" name="experience" required>
-        
+
                     <label for="image">Upload Photo:</label>
                     <input type="url" id="image" name="image" required>
         

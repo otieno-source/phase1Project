@@ -1,0 +1,40 @@
+{
+  "tutors": [
+    {
+      "name": "Collins Otieno",
+      "age": 30,
+      "male": true,
+      "female": false,
+      "subject": "Mathematics",
+      "image": "https://example.com/image.jpg",
+      "fees": 1000
+    },
+    {
+      "name": "Moses Riany",
+      "age": 55,
+      "male": true,
+      "female": false,
+      "subject": "Science",
+      "image": "https://example.com/image.jpg",
+      "fees": 1000
+    },
+    {
+      "name": "Ruth White",
+      "age": 24,
+      "male": false,
+      "female": true,
+      "subject": "English",
+      "image": "https://example.com/image.jpg",
+      "fees": 900
+    },
+    {
+      "name": "Vivian Red",
+      "age": 27,
+      "male": false,
+      "female": true,
+      "subject": "History",
+      "image": "https://example.com/image.jpg",
+      "fees": 900
+    }
+  ]
+}
