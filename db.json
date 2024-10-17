@@ -3,38 +3,30 @@
     {
       "name": "Collins Otieno",
       "age": 30,
-      "male": true,
-      "female": false,
       "subject": "Mathematics",
-      "image": "https://example.com/image.jpg",
-      "fees": 1000
+      "image": "https://media.istockphoto.com/id/1919265357/photo/close-up-portrait-of-confident-businessman-standing-in-office.jpg?s=1024x1024&w=is&k=20&c=EpLEZWEw-pZhhhknmmxUubZK_UL7EuXzMe202LEu3SA=",
+      "fees": 1500
     },
     {
       "name": "Moses Riany",
       "age": 55,
-      "male": true,
-      "female": false,
       "subject": "Science",
-      "image": "https://example.com/image.jpg",
-      "fees": 1000
+      "image": "https://media.istockphoto.com/id/2099408907/photo/smiling-young-businessman-standing-with-his-arms-crossed-against-an-office-wall.jpg?s=1024x1024&w=is&k=20&c=XovuVtqeIctQ3Ea6ivuwYAQ5Pi71qt3HQjINDD8cztw=",
+      "fees": 1500
     },
     {
       "name": "Ruth White",
       "age": 24,
-      "male": false,
-      "female": true,
       "subject": "English",
-      "image": "https://example.com/image.jpg",
-      "fees": 900
+      "image": "https://media.istockphoto.com/id/487828695/photo/beautiful-woman-smiling.jpg?s=1024x1024&w=is&k=20&c=XkTnAflpC9e3kPXsvrplMszw2ncBFpm2ICYAjg394JQ=",
+      "fees": 1200
     },
     {
       "name": "Vivian Red",
       "age": 27,
-      "male": false,
-      "female": true,
-      "subject": "History",
-      "image": "https://example.com/image.jpg",
-      "fees": 900
+      "subject": "Kiswahili",
+      "image": "https://media.istockphoto.com/id/1308883060/photo/close-up-studio-portrait-of-smiling-young-businesswoman-with-folded-arms-against-plain.jpg?s=1024x1024&w=is&k=20&c=UTF79gdTH0Lf1kKTFoO_Gh2LbLkaAUJBPSFM1DL3Lh8=",
+      "fees": 1200
     }
   ]
 }

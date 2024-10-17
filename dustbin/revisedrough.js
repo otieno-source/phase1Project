@@ -4,7 +4,7 @@ function openTutorSignupForm() {
     formDisplay.style.display = (formDisplay.style.display === 'none' || getComputedStyle(formDisplay).display === 'none') ? "block" : "none";
 }
 
-const tutorSignupBtn = document.querySelector('#tutorRegister');//get the button for tutor signup to open form.
+const tutorSignupBtn = document.querySelector('#tutorRegister');
 tutorSignupBtn.addEventListener('click', openTutorSignupForm);
 
 // Function to open/collapse the gallery.
@@ -25,7 +25,7 @@ async function fetchTutors() {
         const openGalleryBtn = document.querySelector('#submitSelect');
         openGalleryBtn.addEventListener('click', () => {
             const select = document.querySelector('#searchTutorBtn');
-            const selectedSubject = select.value;// getting user input.value from select
+            const selectedSubject = select.value;
 
             let found = false; // To track if we find a tutor
 
