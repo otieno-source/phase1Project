@@ -60,7 +60,7 @@ const displayTutor = (newTutor) => {
         <strong>Name:</strong> ${newTutor.name} <br />
         <strong>Age:</strong> ${newTutor.age} <br />
         <strong>Subject:</strong> ${newTutor.subject} <br />
-        <strong>Fees:</strong> ${newTutor.fees} <br />
+        <strong>Rate:</strong> ${newTutor.rate} <br />
         <strong>Contact:</strong> ${newTutor.contact} <br />
         <strong>Gender:</strong> ${newTutor.male ? 'Male' : 'Female'} <br />
         <img src="${newTutor.image}" alt="${newTutor.name}" style="width: 150px; height: 150px;" />
@@ -83,7 +83,7 @@ const handleClick = (newTutor) => {
             <strong>Name:</strong> ${newTutor.name} <br />
             <strong>Age:</strong> ${newTutor.age} <br />
             <strong>Subject:</strong> ${newTutor.subject} <br />
-            <strong>Fees:</strong> ${newTutor.fees} <br />
+            <strong>Rate:</strong> ${newTutor.rate} <br />
             <strong>Contact:</strong> ${newTutor.contact} <br />
             <strong>Gender:</strong> ${newTutor.male ? 'Male' : 'Female'} <br />
             <img src="${newTutor.image}" alt="${newTutor.name}" style="width: 150px; height: 150px;" />
@@ -103,11 +103,11 @@ const addSubmitListener = () => {
         const male = formData.get('gender') === 'Male';
         const subject = formData.get('subject');
         const image = formData.get('image');
-        const fees = formData.get('fees');
+        const fees = formData.get('rate');
         const contact = formData.get('contact');
 
         // Creating an object from the form values
-        const newTutor = { name, age, male, subject, image, fees, contact };
+        const newTutor = { name, age, male, subject, image, rate, contact };
 
         try {
             // Send a POST request to add the new tutor to the database
