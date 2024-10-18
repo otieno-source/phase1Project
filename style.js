@@ -66,7 +66,7 @@ const displayTutor = (newTutor) => {
         <img src="${newTutor.image}" alt="${newTutor.name}" style="width: 150px; height: 150px;" />
     `;
 
-    // Add click listener to display more detailed information when the tutor is clicked
+// Add click listener to display more detailed information when the tutor is clicked
     tutorContainer.addEventListener('click', () => handleClick(newTutor));
     tutorDisplay.appendChild(tutorContainer); // Add the tutor container to the display
 };
@@ -76,6 +76,7 @@ const clearTutorDisplay = () => {
     tutorDisplay.innerHTML = '<h4>Select A Tutor</h4>'; // Clear the previous results
 };
 
+// displaying tutors information through image click. Function invoked in addsubmitListner.
 const handleClick = (newTutor) => {
     const tutorDisplay = document.querySelector('#inforGrid');
     tutorDisplay.innerHTML = `
@@ -134,6 +135,7 @@ const addSubmitListener = () => {
     });
 };
 
+// using a main function to invoke the other functions 
 function run() {
     fetchTutors();
     addSubmitListener();
