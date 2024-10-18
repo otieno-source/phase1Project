@@ -1,5 +1,7 @@
 # phase1Project
 
+### USE gh branch in my Github to see latest works. Thanks
+
 ## MY HTML CODE:
 
 Creating an website App that parents can use to searcch for Tutors.
