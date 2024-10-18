@@ -66,7 +66,7 @@ const displayTutor = (newTutor) => {
         <img src="${newTutor.image}" alt="${newTutor.name}" style="width: 150px; height: 150px;" />
     `;
 
-// Add click listener to display more detailed information when the tutor is clicked
+    // Add click listener to display more detailed information when the tutor is clicked
     tutorContainer.addEventListener('click', () => handleClick(newTutor));
     tutorDisplay.appendChild(tutorContainer); // Add the tutor container to the display
 };
@@ -104,7 +104,7 @@ const addSubmitListener = () => {
         const male = formData.get('gender') === 'Male';
         const subject = formData.get('subject');
         const image = formData.get('image');
-        const fees = formData.get('rate');
+        const rate = formData.get('rate');
         const contact = formData.get('contact');
 
         // Creating an object from the form values
