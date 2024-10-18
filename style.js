@@ -10,7 +10,7 @@ tutorSignupBtn.addEventListener('click', openTutorSignupForm);
 // Function to open/collapse the gallery.
 function openGallery() {
     const gallery = document.querySelector('#gallery');
-    gallery.style.display = (gallery.style.display === 'none' || getComputedStyle(gallery).display === 'none') ? "block" : "none";
+    gallery.style.display = "block"; // Always show gallery
 }
 
 // Fetching tutors from local JSON.
@@ -27,32 +27,56 @@ async function fetchTutors() {
             const select = document.querySelector('#searchTutorBtn');
             const selectedSubject = select.value; // Getting user input.value from select
 
-            let found = false; // To track if we find a tutor
+            // Clear existing information
+            clearTutorDisplay();
 
             // Check if there are any tutors that match the selected subject
-            data.forEach(element => {
-                if (selectedSubject === element.subject) {
-                    found = true; // Mark as found
-                    handleClick(element); // Call the handleClick function with the tutor data
-                }
-            });
+            const matchingTutors = data.filter(element => selectedSubject === element.subject);
 
-            if (found) {
-                openGallery(); // Show gallery if a match was found
+            if (matchingTutors.length > 0) {
+                matchingTutors.forEach(tutor => displayTutor(tutor)); // DisplayTutor for each found tutor
+                openGallery(); // Show gallery if matches were found
             } else {
                 alert('No tutor found for the selected subject.'); // Alert for no matches
             }
         });
     } catch (error) {
-        console.error(error); 
+        console.error(error);
     }
 }
 
 // Function to handle displaying tutor information
-const handleClick = (newTutor) => {
+const displayTutor = (newTutor) => {
     const tutorDisplay = document.querySelector('#inforGrid');
 
-    // Display detailed information about the tutor
+    // Create a container for each tutor
+    const tutorContainer = document.createElement('div');
+    tutorContainer.style.border = "1px solid #ccc";
+    tutorContainer.style.padding = "10px";
+    tutorContainer.style.marginTop = "10px";
+
+    // Display the tutor information
+    tutorContainer.innerHTML = `
+        <strong>Name:</strong> ${newTutor.name} <br />
+        <strong>Age:</strong> ${newTutor.age} <br />
+        <strong>Subject:</strong> ${newTutor.subject} <br />
+        <strong>Fees:</strong> ${newTutor.fees} <br />
+        <strong>Gender:</strong> ${newTutor.male ? 'Male' : 'Female'} <br />
+        <img src="${newTutor.image}" alt="${newTutor.name}" style="width: 150px; height: 150px;" />
+    `;
+
+    // Add click listener to display more detailed information when the tutor is clicked
+    tutorContainer.addEventListener('click', () => handleClick(newTutor));
+    tutorDisplay.appendChild(tutorContainer); // Add the tutor container to the display
+};
+
+const clearTutorDisplay = () => {
+    const tutorDisplay = document.querySelector('#inforGrid');
+    tutorDisplay.innerHTML = '<h4>Select A Tutor</h4>'; // Clear the previous results
+};
+
+const handleClick = (newTutor) => {
+    const tutorDisplay = document.querySelector('#inforGrid');
     tutorDisplay.innerHTML = `
         <div style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
             <strong>Name:</strong> ${newTutor.name} <br />
@@ -96,25 +120,10 @@ const addSubmitListener = () => {
                 throw new Error('Failed to add new tutor');
             }
 
-            // add the new tutor to the display as well
-            const display = document.querySelector('#inforGrid'); // Getting the HTML div for the gallery
-
-            const newTutorImage = document.createElement('img'); // Creating img tag here
-            newTutorImage.src = newTutor.image;
-            newTutorImage.alt = newTutor.name;
-            newTutorImage.style.width = '100%';
-            newTutorImage.style.height = 'auto';
-            newTutorImage.style.cursor = 'pointer';
-            newTutorImage.style.margin = '10px 0';
-
-            // Adding an event listener so that when you click the new tutor image, it shows more details about it.
-            newTutorImage.addEventListener('click', () => handleClick(newTutor));
-
-            display.appendChild(newTutorImage); // Adding the new tutor image
-
-            // Clear the form fields
             alert('Your Details have been successfully submitted!');
             inputForm.reset();
+            
+
         } catch (error) {
             console.error(error);
             alert('There was an error submitting your details. Please try again.');
