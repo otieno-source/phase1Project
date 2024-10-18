@@ -2,6 +2,8 @@
 
 ### USE gh branch in my Github to see latest works. Thanks
 
+## my db.json file is in the folder "backend'. it will take like 50sec. for dbjson to fetch fully.
+
 ## MY HTML CODE:
 
 Creating an website App that parents can use to searcch for Tutors.
