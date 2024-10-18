@@ -93,6 +93,25 @@
       "subject": "Mathematics",
       "image": "https://media.istockphoto.com/id/2148747281/photo/overjoyed-gorgeous-latin-female-smile-at-camera-near-green-wall-in-studio-crossing-hands-on.jpg?s=1024x1024&w=is&k=20&c=ERb9nXuo0nboQMcS9J10Muj8oKWVSZnDBhobiVxibRo=",
       "fees": "35000"
+    },
+    {
+      "id": "f02c",
+      "name": "Caroline",
+      "age": "30",
+      "male": false,
+      "subject": "Religious Studies",
+      "image": "https://media.istockphoto.com/id/1369777030/photo/cheerful-young-woman-in-white-t-shirt.jpg?s=1024x1024&w=is&k=20&c=7pplqnlg7IJtX7cb_4IGePMvITknMMFrgUfd0M4eaTk=",
+      "fees": "1200"
+    },
+    {
+      "id": "056c",
+      "name": "Veronicah",
+      "age": "32",
+      "male": false,
+      "subject": "Computer Studies",
+      "image": "https://media.istockphoto.com/id/2101794935/photo/portrait-of-a-woman-smiling-in-front-of-a-white-wall.jpg?s=1024x1024&w=is&k=20&c=m6lbKVVMupHGzmLQMLrV_HhB1XQJzU6vXRbYJ8tjXlU=",
+      "fees": "2300",
+      "contact": "07568980"
     }
   ]
 }

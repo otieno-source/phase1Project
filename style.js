@@ -27,7 +27,7 @@ async function fetchTutors() {
             const select = document.querySelector('#searchTutorBtn');
             const selectedSubject = select.value; // Getting user input.value from select
 
-            // Clear existing information
+            // Am Clearing existing information
             clearTutorDisplay();
 
             // Check if there are any tutors that match the selected subject
@@ -61,6 +61,7 @@ const displayTutor = (newTutor) => {
         <strong>Age:</strong> ${newTutor.age} <br />
         <strong>Subject:</strong> ${newTutor.subject} <br />
         <strong>Fees:</strong> ${newTutor.fees} <br />
+        <strong>Contact:</strong> ${newTutor.contact} <br />
         <strong>Gender:</strong> ${newTutor.male ? 'Male' : 'Female'} <br />
         <img src="${newTutor.image}" alt="${newTutor.name}" style="width: 150px; height: 150px;" />
     `;
@@ -83,6 +84,7 @@ const handleClick = (newTutor) => {
             <strong>Age:</strong> ${newTutor.age} <br />
             <strong>Subject:</strong> ${newTutor.subject} <br />
             <strong>Fees:</strong> ${newTutor.fees} <br />
+            <strong>Contact:</strong> ${newTutor.contact} <br />
             <strong>Gender:</strong> ${newTutor.male ? 'Male' : 'Female'} <br />
             <img src="${newTutor.image}" alt="${newTutor.name}" style="width: 150px; height: 150px;" />
         </div>
@@ -102,9 +104,10 @@ const addSubmitListener = () => {
         const subject = formData.get('subject');
         const image = formData.get('image');
         const fees = formData.get('fees');
+        const contact = formData.get('contact');
 
         // Creating an object from the form values
-        const newTutor = { name, age, male, subject, image, fees };
+        const newTutor = { name, age, male, subject, image, fees, contact };
 
         try {
             // Send a POST request to add the new tutor to the database
