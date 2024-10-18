@@ -88,8 +88,8 @@ main{
     margin-top: 3cm;
     width: 300px;
     height: max-content;
-    border-radius: 30px;
-    background-color: rgba(35, 35, 35, 0.868);
+    border-radius: 50px;
+    background-color: rgba(35, 35, 35, 0.959);
     font-size: small;
     color: rgb(252, 206, 5);
     padding: 8px;

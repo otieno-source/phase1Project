@@ -16,7 +16,7 @@ function openGallery() {
 // Fetching tutors from local JSON.
 async function fetchTutors() {
     try {
-        const response = await fetch('http://localhost:3000/tutors');
+        const response = await fetch('https://phase1project-somk.onrender.com/tutors');
         if (!response.ok) {
             throw new Error('Unable to fetch tutors');
         }
@@ -111,7 +111,7 @@ const addSubmitListener = () => {
 
         try {
             // Send a POST request to add the new tutor to the database
-            const response = await fetch('http://localhost:3000/tutors', {
+            const response = await fetch('https://phase1project-somk.onrender.com/tutors', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
